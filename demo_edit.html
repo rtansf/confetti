@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/jquery-cron.css"/>
+    <link rel="stylesheet" href="css/confetti.css"/>
+    <link rel="stylesheet" href="css/datepicker.css"/>
+    <link rel="stylesheet" href="css/autocomplete.css"/>
+    <script src="lib/jquery-3.2.1.js"></script>
+    <script src="lib/jquery-cron.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+    <script src="lib/datepicker.min.js"></script>
+    <script src="lib/confetti.js"></script>
+    <script src="lib/autocomplete.min.js"></script>
+
+    <title>Confetti Demo</title>
+
+    <style>
+        body {
+            padding: 20px;
+        }
+    </style>
+
+    <script>
+    var states = [
+        { id: "AL", label: "Alabama" },
+        { id: "AK", label: "Alaska" },
+        { id: "AZ", label: "Arizona" },
+        { id: "AR", label: "Arkansas" },
+        { id: "CA", label: "California" },
+        { id: "CO", label: "Colorado" },
+        { id: "CT", label: "Connecticut" },
+        { id: "DE", label: "Delaware" },
+        { id: "FL", label: "Florida" },
+        { id: "GA", label: "Georgia" },
+        { id: "HI", label: "Hawaii" },
+        { id: "ID", label: "Idaho" },
+        { id: "IL", label: "Illinois" },
+        { id: "IN", label: "Indiana" },       
+        { id: "IA", label: "Iowa" },        
+        { id: "KS", label: "Kansas" },       
+        { id: "KY", label: "Kentucky" },        
+        { id: "LA", label: "Louisiana" },        
+        { id: "ME", label: "Maine" },        
+        { id: "MD", label: "Maryland" },        
+        { id: "MA", label: "Massachusetts" },        
+        { id: "MI", label: "Michigan" },        
+        { id: "MN", label: "Minnesota" },        
+        { id: "MS", label: "Mississippi" },        
+        { id: "MO", label: "Missouri" },        
+        { id: "MT", label: "Montana" },        
+        { id: "NE", label: "Nebraska" },        
+        { id: "NV", label: "Nevada" },        
+        { id: "NH", label: "New Hampshire" },        
+        { id: "NJ", label: "New Jersey" },        
+        { id: "NM", label: "New Mexico" },        
+        { id: "NY", label: "New York" },        
+        { id: "NC", label: "North Carolina" },        
+        { id: "ND", label: "North Dakota" },        
+        { id: "OH", label: "Ohio" },        
+        { id: "OK", label: "Oklahoma" },        
+        { id: "OR", label: "Oregon" },        
+        { id: "PA", label: "Pennsylvania" },        
+        { id: "RI", label: "Rhode Island" },        
+        { id: "SC", label: "South Carolina" },        
+        { id: "SD", label: "South Dakota" },        
+        { id: "TN", label: "Tennessee" },        
+        { id: "TX", label: "Texas" },        
+        { id: "UT", label: "Utah" },        
+        { id: "VT", label: "Vermont" },        
+        { id: "VA", label: "Virginia" },        
+        { id: "WA", label: "Washington" },        
+        { id: "WV", label: "West Virginia" },        
+        { id: "WI", label: "Wisconsin" },        
+        { id: "WY", label: "Wyoming" },        
+        { id: "DC", label: "Washington DC" }        
+];        
+
+var demo_schema = 
+{
+    parameters: [
+      {
+        name: "int_field",
+        label: "Integer Field",
+        type: "integer",
+        optional: false
+      },
+      {
+        name: "string_field",
+        label: "String Field",
+        type: "string",
+        optional: false
+      },
+      {
+        name: "float_field",
+        label: "Float Field",
+        type: "float",
+        optional: false
+      },
+      {
+        name: "boolean_field",
+        label: "Boolean Field",
+        type: "boolean",
+        optional: false
+      },
+      {
+        name: "date_field",
+	label: "Date Field",
+	type: "date",
+	optional: false
+      },
+      {
+        name: "cron_field",
+	label: "Cron Field",
+	type: "cron",
+	optional: false
+      },
+      {
+        name: "autocomplete_enum_field",
+	label: "Autocomplete Enum Field",
+	type: "state",
+	optional: false
+      },
+      {
+        name: "multiselect_enum_field",
+	label: "Multi-Select Enum Field",
+	type: "states",
+	optional: false
+      },
+      {
+        name: "groups",
+	label: "Groups",
+	type: [
+          {
+            name: "group_enum_field",
+    	    label: "Group Enum Field",
+	    type: "state",
+	    optional: false
+          },
+          {
+            name: "group_string_field",
+    	    label: "Group String Field",
+	    type: "string",
+	    optional: false
+          }
+	],
+	optional: false
+      },
+    ],
+    option_types: [
+       {
+          option_name: 'states',
+	  multiselect: true,
+	  options: states
+       },
+       {
+          option_name: 'state',
+	  multiselect: false,
+	  options: states
+       }
+    ]
+};
+
+var demo_instance = {
+    int_field: 1,
+    string_field: "AAA",
+    float_field: 34.5,
+    boolean_field: true,
+    date_field: "2017-03-04",
+    cron_field: "0 * * * *",
+    autocomplete_enum_field: "CA",
+    multiselect_enum_field: "NY,NJ,MA",
+    groups: [
+       {
+          group_enum_field: "KS",
+          group_string_field: "bbb"
+       },
+       {
+          group_enum_field: "NE",
+          group_string_field: "ccc"
+       }
+    ]
+};
+
+    function process_save(instance, closure_data) {
+        console.log('process_save called. instance below:');
+	console.log(instance);
+    }
+
+    function process_cancel(closure_data) {
+        console.log('process_cancel');
+    }
+
+    $(document).ready(function() {
+        $('#container').confetti({ name: 'myeditor',
+				       schema: demo_schema,
+				       instance: demo_instance,
+				       save_callback: process_save,
+				       cancel_callback: process_cancel,
+				       closure_data: 'test'
+				    })
+
+    });
+    </script>
+</head>
+<body>
+
+<div id="container" class="form-horizontal">
+</div>
+
+</body>
+</html>

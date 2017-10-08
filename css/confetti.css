@@ -1,0 +1,35 @@
+.cfti_actionbutton {
+    width: 25px;
+    height: 25px;
+    background-repeat: no-repeat;
+    background-position: right top;
+    cursor: pointer;
+}
+
+.cfti_delgroupbutton {
+    background-image: url('../images/delete.jpg');
+}
+
+.cfti_addgroupbutton {
+    background-image: url('../images/plus.jpg');
+}
+
+.cfti_deletebutton {
+    background-image: url('../images/delete.jpg');
+}
+
+.cfti_savebutton {
+    background-color: #08ad31; 
+    margin-left: 350px;
+}
+	
+.cfti_cancelbutton {
+     background-color: #ad3c08; 
+     margin-left: 5px;
+}
+
+.cfti_savecancel {
+    margin-top: 10px;
+    color: white;
+}
+
