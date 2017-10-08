@@ -8,7 +8,7 @@ Suppose you have a task-management application and have a task configuration dat
 
 ![ScreenShot](task_editor.png)
 
-You can easily create the above UI by defining the schema using Confetti's schema DSL as shown below:
+You can easily create the above form by defining the schema using Confetti's schema DSL as shown below:
 
 __Schema__
 
@@ -111,3 +111,7 @@ To create the editor, simply define a div container element and invoke the confe
 ```
 
 Note the callback functions passed to the call. For example, the save_callback will be invoked when the user clicks on the Save button.
+
+License
+-------
+Apache 2 License 2.0 (https://opensource.org/licenses/Apache-2.0)
