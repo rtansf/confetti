@@ -1,9 +1,9 @@
+<h1>Confetti - An visual editor for structured data</h1>
 ![alt text](confetti.jpg "Confetti")
-<h1>Confetti - An editor for JSON configuration data</h1>
 
-Confetti is a Jquery plugin that allows you to create and edit schema-based JSON data structures. It is especially suitable when the JSON data is being used to configure applications.
+Confetti is a Jquery plugin that allows you to create and edit schema-based JSON data structures. It is well-suited for situations where JSON data is used to configure  applications.
 
-Confetti is metadata-driven and uses its schema to generate the UI automatically.  So, with minimal effort you can create a tool for your users to start creating and editing your application's configuration data.
+Confetti is metadata-driven and uses its schema to generate the UI automatically.  With minimal effort you can create a tool for your users to start creating and editing your application's configuration data.
 
 Suppose you have a task-management application and have a task configuration data structure as seen here:
 
