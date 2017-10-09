@@ -77,94 +77,95 @@
         { id: "DC", label: "Washington DC" }        
 ];        
 
-var demo_schema = 
+var demo_schema =
 {
-    parameters: [
-      {
-        name: "int_field",
-        label: "Integer Field",
-        type: "integer",
-        optional: false
-      },
-      {
-        name: "string_field",
-        label: "String Field",
-        type: "string",
-        optional: false
-      },
-      {
-        name: "float_field",
-        label: "Float Field",
-        type: "float",
-        optional: false
-      },
-      {
-        name: "boolean_field",
-        label: "Boolean Field",
-        type: "boolean",
-        optional: false
-      },
-      {
-        name: "date_field",
-	label: "Date Field",
-	type: "date",
-	optional: false
-      },
-      {
-        name: "cron_field",
-	label: "Cron Field",
-	type: "cron",
-	optional: false
-      },
-      {
-        name: "autocomplete_enum_field",
-	label: "Autocomplete Enum Field",
-	type: "state",
-	optional: false
-      },
-      {
-        name: "multiselect_enum_field",
-	label: "Multi-Select Enum Field",
-	type: "states",
-	optional: false
-      },
-      {
-        name: "groups",
-	label: "Groups",
-	type: [
-          {
-            name: "group_enum_field",
-    	    label: "Group Enum Field",
-	    type: "state",
-	    optional: false
-          },
-          {
-            name: "group_string_field",
-    	    label: "Group String Field",
-	    type: "string",
-	    optional: false
-          }
-	],
-	optional: false
-      },
-    ],
-    option_types: [
-       {
-          option_name: 'states',
-	  multiselect: true,
-	  options: states
-       },
-       {
-          option_name: 'state',
-	  multiselect: false,
-	  options: states
-       }
-    ]
+  parameters: [
+    {
+      name: "int_field",
+      label: "Integer Field",
+      type: "integer",
+      optional: false
+    },
+    {
+      name: "string_field",
+      label: "String Field",
+      type: "string",
+      optional: false
+    },
+    {
+      name: "float_field",
+      label: "Float Field",
+      type: "float",
+      optional: false
+    },
+    {
+      name: "boolean_field",
+      label: "Boolean Field",
+      type: "boolean",
+      optional: false
+    },
+    {
+      name: "date_field",
+      label: "Date Field",
+      type: "date",
+      optional: false
+    },
+    {
+      name: "cron_field",
+      label: "Cron Field",
+      type: "cron",
+      optional: false
+    },
+    {
+      name: "autocomplete_enum_field",
+      label: "Autocomplete Enum Field",
+      type: "state",
+      optional: false
+    },
+    {
+      name: "multiselect_enum_field",
+      label: "Multi-Select Enum Field",
+      type: "states",
+      optional: false
+    },
+    {
+      name: "groups",
+      label: "Groups",
+      type: [
+        {
+          name: "group_enum_field",
+          label: "Group Enum Field",
+          type: "state",
+          optional: false
+        },
+        {
+          name: "group_string_field",
+          label: "Group String Field",
+          type: "string",
+          optional: false
+        }
+      ],
+      optional: false
+    },
+    
+  ],
+  option_types: [
+    {
+      option_name: 'states',
+      multiselect: true,
+      options: states
+    },
+    {
+      option_name: 'state',
+      multiselect: false,
+      options: states
+    }
+  ]
 };
 
     function process_save(instance, closure_data) {
         console.log('process_save called. instance below:');
-	console.log(instance);
+        console.log(instance);
     }
 
     function process_cancel(closure_data) {
