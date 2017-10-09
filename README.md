@@ -1,4 +1,4 @@
-<h1>Confetti - An visual editor for structured data</h1>
+<h1>Confetti - A visual editor for structured data</h1>
 
 ![alt text](confetti.jpg "Confetti")
 
