@@ -1,3 +1,4 @@
+![alt text](confetti.jpg "Confetti")
 <h1>Confetti - An editor for JSON configuration data</h1>
 
 Confetti is a Jquery plugin that allows you to create and edit schema-based JSON data structures. It is especially suitable when the JSON data is being used to configure applications.
