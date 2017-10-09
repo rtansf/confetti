@@ -1,6 +1,6 @@
 <h1>Confetti - A visual editor for structured data</h1>
 
-![alt text](confetti.jpg "Confetti") <a href="http//cubify.io/confetti/demo_edit.html>Demo</a>
+![alt text](confetti.jpg "Confetti") <a href="http//cubify.io/confetti/demo_edit.html">Demo</a>
 
 Confetti is a Jquery plugin that allows you to create and edit schema-based JSON data structures. It is well-suited in situations where JSON data is used to configure applications.
 
