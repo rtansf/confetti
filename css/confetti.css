@@ -19,13 +19,18 @@
 }
 
 .cfti_savebutton {
-    background-color: #08ad31; 
+    background-color: #451787; 
     margin-left: 350px;
+    border: none;
+    padding: 8px;
 }
 	
 .cfti_cancelbutton {
-     background-color: #ad3c08; 
-     margin-left: 5px;
+    background-color: grey;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    padding: 8px;
 }
 
 .cfti_savecancel {
