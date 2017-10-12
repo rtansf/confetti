@@ -7,15 +7,15 @@
 }
 
 .cfti_delgroupbutton {
-    background-image: url('../images/delete.jpg');
+    background-image: url('../images/delete.png');
 }
 
 .cfti_addgroupbutton {
-    background-image: url('../images/plus.jpg');
+    background-image: url('../images/plus.png');
 }
 
 .cfti_deletebutton {
-    background-image: url('../images/delete.jpg');
+    background-image: url('../images/delete.png');
 }
 
 .cfti_savebutton {
