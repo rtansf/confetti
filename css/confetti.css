@@ -22,7 +22,6 @@
     background-color: #451787; 
     margin-left: 350px;
     border: none;
-    padding: 8px;
 }
 	
 .cfti_cancelbutton {
@@ -36,5 +35,9 @@
 .cfti_savecancel {
     margin-top: 10px;
     color: white;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
 }
 
